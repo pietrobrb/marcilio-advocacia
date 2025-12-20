@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Lawmaker &mdash; Website Template by Colorlib</title>
+	<title>Marcílio Advocacia</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Facebook and Twitter integration -->
@@ -117,7 +117,7 @@
 						<h3>Informa&ccedil;&otilde;es para contato</h3>
 						<ul>
 							<li class="address">Rua Manoel Lopes Filho, 773<br> Currais Novos - RN, 59380-000</li>
-							<li class="phone"><a href="tel://08440054103">(84) 4005-4103</a></li>
+							<li class="phone"><a href="tel://08434122018">(84) 3412-2018</a></li>
 							<li class="email"><a href="mailto:gabin.cn@ifrn.edu.br">gabin.cn@ifrn.edu.br</a></li>
 							<li class="url"><a href="http://portal.ifrn.edu.br/campus/curraisnovos">http://portal.ifrn.edu.br/campus/curraisnovos</a></li>
 						</ul>
@@ -159,7 +159,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<input type="submit" value="Enviar mensagem" class="btn btn-primary"> <!--Adicionar evento do alert-->
+							<input type="submit" value="Enviar mensagem" id="btnEnviar" class="btn btn-primary" onclick="verificarEnvio(this)">
 						</div>
 
 					</form>		
@@ -193,7 +193,7 @@
 					<h4>Informa&ccedil;&otilde;es para contato</h4>
 					<ul class="ftco-footer-links">
 						<li>Rua Manoel Lopes Filho, 773 <br> Currais Novos - RN, 59380-000</li>
-						<li><a href="tel://08440054103">(84) 4005-4103</a></li>
+						<li><a href="tel://08434122018">(84) 3412-2018</a></li>
 						<li><a href="mailto:gabin.cn@ifrn.edu.br">gabin.cn@ifrn.edu.br</a></li>
 					</ul>
 				</div>
@@ -216,10 +216,9 @@
             </p>
 					<p>
 						<ul class="ftco-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a href="https://www.instagram.com/ifrncn?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="icon-instagram"></i></a></li>
+							<li><a href="https://www.facebook.com/ifrncampuscurraisnovos"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-linkedin"></i></a></li> <!--Adicionar o link do Linkedin do IF-->
 						</ul>
 					</p>
 				</div>
@@ -266,6 +265,23 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-23581568-13');
+
+  //Confirmação de envio de formulário (necessita corrigir o else)
+  let btnEnviar = document.getElementById('btnEnviar');
+  let fname = document.getElementById('fname').value;
+  let lname = document.getElementById('lname').value;
+  let email = document.getElementById('email').value;
+  let subject = document.getElementById('subject').value;
+  let message = document.getElementById('message').value;
+
+  function verificarEnvio() {
+  if (!fname || !lname || !email || !subject || !message) {
+    alert('Preencha todos os campos.');
+    return;
+  }
+
+  alert('Sua mensagem foi enviada com sucesso!');
+}
 </script>
 
 	</body>
