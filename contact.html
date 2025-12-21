@@ -126,7 +126,7 @@
 				</div>
 				<div class="col-md-6 animate-box">
 					<h3>Fale conosco</h3>
-					<form action="#">
+					<form action="#" id="formContato">
 						<div class="row form-group">
 							<div class="col-md-6">
 								<!-- <label for="fname">First Name</label> -->
@@ -266,21 +266,23 @@
 
   gtag('config', 'UA-23581568-13');
 
-  //Confirmação de envio de formulário (necessita corrigir o else)
+  //Confirmação de envio de formulário
   let btnEnviar = document.getElementById('btnEnviar');
-  let fname = document.getElementById('fname').value;
-  let lname = document.getElementById('lname').value;
-  let email = document.getElementById('email').value;
-  let subject = document.getElementById('subject').value;
-  let message = document.getElementById('message').value;
-
+	
   function verificarEnvio() {
-  if (!fname || !lname || !email || !subject || !message) {
-    alert('Preencha todos os campos.');
-    return;
-  }
-
-  alert('Sua mensagem foi enviada com sucesso!');
+	  let fname = document.getElementById('fname').value;
+	  let lname = document.getElementById('lname').value;
+	  let email = document.getElementById('email').value;
+	  let subject = document.getElementById('subject').value;
+	  let message = document.getElementById('message').value;
+	  
+	  if(fname !== '' && lname !== '' && email !== '' && subject !== '' && message !== ''){
+		  alert('Sua mensagem foi enviada com sucesso!');
+		  document.getElementById('formContato').reset();
+	  }
+	  else{
+		  alert('Preencha todos os campos.')
+	  }
 }
 </script>
 
