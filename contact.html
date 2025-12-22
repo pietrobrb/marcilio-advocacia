@@ -130,32 +130,32 @@
 						<div class="row form-group">
 							<div class="col-md-6">
 								<!-- <label for="fname">First Name</label> -->
-								<input type="text" id="fname" class="form-control" placeholder="Seu primeiro nome">
+								<input type="text" id="fname" class="form-control" placeholder="Seu primeiro nome" required>
 							</div>
 							<div class="col-md-6">
 								<!-- <label for="lname">Last Name</label> -->
-								<input type="text" id="lname" class="form-control" placeholder="Seu sobrenome">
+								<input type="text" id="lname" class="form-control" placeholder="Seu sobrenome" required>
 							</div>
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="email">Email</label> -->
-								<input type="text" id="email" class="form-control" placeholder="Seu endereço de e-mail">
+								<input type="email" id="email" class="form-control" placeholder="Seu endereço de e-mail" required>
 							</div>
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="subject">Subject</label> -->
-								<input type="text" id="subject" class="form-control" placeholder="O assunto que deseja falar">
+								<input type="text" id="subject" class="form-control" placeholder="O assunto que deseja falar" required>
 							</div>
 						</div>
 
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="message">Message</label> -->
-								<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Digite aqui a sua mensagem"></textarea>
+								<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Digite aqui a sua mensagem" required></textarea>
 							</div>
 						</div>
 						<div class="form-group">
@@ -251,9 +251,7 @@
 	<!-- Magnific Popup -->
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/magnific-popup-options.js"></script>
-	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-	<script src="js/google_map.js"></script>
+
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
@@ -269,23 +267,33 @@
   //Confirmação de envio de formulário
   let btnEnviar = document.getElementById('btnEnviar');
 	
+  function emailValido(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+  
+  if (regex.test((email))) {
+	return true;
+  }
+  else {
+	return false;
+  }
+}
   function verificarEnvio() {
-	  let fname = document.getElementById('fname').value;
-	  let lname = document.getElementById('lname').value;
-	  let email = document.getElementById('email').value;
-	  let subject = document.getElementById('subject').value;
-	  let message = document.getElementById('message').value;
+	  const fname = document.getElementById('fname').value;
+	  const lname = document.getElementById('lname').value;
+	  const email = document.getElementById('email').value;
+	  const subject = document.getElementById('subject').value;
+	  const message = document.getElementById('message').value;
 	  
-	  if(fname !== '' && lname !== '' && email !== '' && subject !== '' && message !== ''){
+	  if(fname !== '' && lname !== '' && email !== '' && subject !== '' && message !== '' && emailValido(email)){
 		  alert('Sua mensagem foi enviada com sucesso!');
 		  document.getElementById('formContato').reset();
 	  }
-	  else{
-		  alert('Preencha todos os campos.')
+	
+	  if (fname !== '' && lname !== '' && email !== '' && subject !== '' && message !== '' && !emailValido(email)){
+		  alert('Insira um endereço de e-mail válido.');
 	  }
 }
 </script>
 
 	</body>
 </html>
-
