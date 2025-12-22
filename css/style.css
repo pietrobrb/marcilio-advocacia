@@ -577,6 +577,12 @@ h1, h2, h3, h4, h5, h6, figure {
       color: #fff; }
     .services:hover strong, .services:focus strong {
       color: #fff; }
+    .services .desc{
+      min-height: 350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
 .ftco-social-icons {
   margin: 0;
@@ -1278,24 +1284,33 @@ h1, h2, h3, h4, h5, h6, figure {
     transform: scale(1.05); }
 
 .pagination {
-  text-align: center; }
+  display: flex;
+  text-align: center;
+  gap: 10px;
+  justify-content: center;
+}
   .pagination a {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 4px;
-    border: 1px solid #e6e6e6;
-    background: #fff; }
+    padding: 10px 16px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    color: #0d6efd;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+  .pagination a.active {
+    background-color: #0d6efd;
+    color: #fff;
+    border-color: #0d6efd;
+  }
     .pagination a:hover {
       -webkit-box-shadow: 0 1px 7px -1px rgba(0, 0, 0, 0.1);
       box-shadow: 0 1px 7px -1px rgba(0, 0, 0, 0.1);
-      border-color: #ccc; }
-  .pagination .caption {
-    width: auto !important;
-    padding-left: 10px;
-    padding-right: 10px; }
-
+      border-color: #ccc;
+    }
+    .pagination a:hover:not(.active) {
+      background-color: #e7f1ff;
+    }
 .sidebar-box {
   margin-bottom: 30px;
   padding: 25px;
