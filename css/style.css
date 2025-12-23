@@ -84,9 +84,10 @@ h1, h2, h3, h4, h5, h6, figure {
   .ftco-nav .top-menu {
     padding: 28px 0; }
   .ftco-nav #ftco-logo {
-    font-size: 24px;
+    font-size: 20px;
     margin: 0;
     padding: 0;
+    white-space: nowrap;
     text-transform: uppercase;
     font-weight: bold;
     font-weight: 700;
@@ -577,6 +578,12 @@ h1, h2, h3, h4, h5, h6, figure {
       color: #fff; }
     .services:hover strong, .services:focus strong {
       color: #fff; }
+    .services .desc{
+      min-height: 350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
 .ftco-social-icons {
   margin: 0;
@@ -1281,6 +1288,7 @@ h1, h2, h3, h4, h5, h6, figure {
   display: flex;
   text-align: center;
   gap: 10px;
+  justify-content: center;
 }
   .pagination a {
     padding: 10px 16px;
@@ -1304,11 +1312,6 @@ h1, h2, h3, h4, h5, h6, figure {
     .pagination a:hover:not(.active) {
       background-color: #e7f1ff;
     }
-  .pagination .caption {
-    width: auto !important;
-    padding-left: 10px;
-    padding-right: 10px; }
-
 .sidebar-box {
   margin-bottom: 30px;
   padding: 25px;
