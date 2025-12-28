@@ -783,7 +783,7 @@ h1, h2, h3, h4, h5, h6, figure {
     margin-bottom: 30px; }
   .blog-featured h2 {
     line-height: 1.2;
-    font-size: 20px; }
+    font-size: 20px;}
     .blog-featured h2 a {
       color: #3f52e3; }
       .blog-featured h2 a:hover {
@@ -801,7 +801,8 @@ h1, h2, h3, h4, h5, h6, figure {
     width: 150px;
     float: left; }
   .blog-entry .desc {
-    padding-left: 170px; }
+    padding-left: 170px;
+   }
     .blog-entry .desc h3 a {
       color: #3f52e3; }
       .blog-entry .desc h3 a:hover {
@@ -812,9 +813,14 @@ h1, h2, h3, h4, h5, h6, figure {
       margin-bottom: 10px; }
 
 .ftco-blog {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
   margin-bottom: 40px;
   width: 100%;
-  float: left; }
+  float: left; 
+} 
+  
   .ftco-blog > a {
     display: block;
     position: relative;
@@ -822,7 +828,7 @@ h1, h2, h3, h4, h5, h6, figure {
     -o-transition: 0.5s;
     transition: 0.5s; }
     .ftco-blog > a img {
-      width: 100%; }
+      width: 100%;}
   @media screen and (max-width: 768px) {
     .ftco-blog {
       width: 100%; } }

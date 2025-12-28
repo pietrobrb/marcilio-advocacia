@@ -350,33 +350,6 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
-	<script>
-	const pages = document.querySelectorAll('.pagination a:not(.caption)');
-	const next = document.querySelector('.pagination .caption');
-	let current = 0;
-
-	pages.forEach((page, index) => {
-	page.addEventListener('click', e => {
-		e.preventDefault();
-		setActive(index);
-	});
-	});
-
-	next.addEventListener('click', e => {
-	e.preventDefault();
-	if (current < pages.length - 1) {
-		setActive(current + 1);
-	}
-	});
-
-	function setActive(index) {
-	pages[current].classList.remove('active');
-	pages[index].classList.add('active');
-	current = index;
-	}
-
-</script>
-
 	</body>
 </html>
 
