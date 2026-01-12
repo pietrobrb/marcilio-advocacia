@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="pt-br">
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,6 +49,51 @@
 	<![endif]-->
 
 
+	<script>
+		function lerMais(){
+				const btnReadMore = document.getElementById("btnReadMore");
+				const readMore = document.getElementById("readMore");
+
+				if (readMore.style.display === "none") {
+					readMore.style.display = "inline";
+					btnReadMore.innerText = "Ler Menos";
+				}
+				else {
+					readMore.style.display = "none";
+					btnReadMore.innerText = "Ler Mais";
+				}
+			}
+
+		//Confirmação de envio de formulário
+  let btnEnviar = document.getElementById('btnEnviar');
+	
+  function emailValido(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+  
+  if (regex.test((email))) {
+	return true;
+  }
+  else {
+	return false;
+  }
+}
+  function verificarEnvio() {
+	  const fname = document.getElementById('fname').value;
+	  const lname = document.getElementById('lname').value;
+	  const email = document.getElementById('email').value;
+	  const subject = document.getElementById('subject').value;
+	  const message = document.getElementById('message').value;
+	  
+	  if(fname !== '' && lname !== '' && email !== '' && subject !== '' && message !== '' && emailValido(email)){
+		  alert('Sua mensagem foi enviada com sucesso!');
+		  document.getElementById('formContato').reset();
+	  }
+	
+	  if (fname !== '' && lname !== '' && email !== '' && subject !== '' && message !== '' && !emailValido(email)){
+		  alert('Insira um endereço de e-mail válido.');
+	  }
+}
+	</script>
 
 	</head>
 	<body>
@@ -61,21 +106,21 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-2">
-						<div id="ftco-logo"><a href="index.html">MARCÍLIO ADVOCACIA</a></div>
+						<div id="ftco-logo"><a href="javascript:void(0)">MARCÍLIO ADVOCACIA</a></div>
 					</div>
 					<div class="col-md-10 text-right menu-1">
 						<ul>
-							<li class="active"><a href="index.html">Ínicio</a></li>
+							<li class="active"><a href="javascript:void(0)">Ínicio</a></li>
 							<li><a href="practice.html">Áreas de atuação</a></li>
 							<li><a href="won.html">Casos ganhos</a></li>
 							<li><a href="gallery.html">Galeria</a></li>
 							<li class="has-dropdown">
 								<a href="blog.html">Blog</a>
 								<ul class="dropdown">
-									<li><a href="#">Direito da Família</a></li>
-									<li><a href="#">Direito do Consumidor</a></li>
-									<li><a href="#">Direito do Prevodenciário</a></li>
-									<li><a href="#">Direito do Admininstrativo</a></li>
+									<li><a href="blog-single.html">Direito da Família</a></li>
+									<li><a href="javascript:void(0)">Direito do Consumidor</a></li>
+									<li><a href="javascript:void(0)">Direito do Prevodenciário</a></li>
+									<li><a href="javascript:void(0)">Direito do Admininstrativo</a></li>
 								</ul>
 							</li>
 							<li><a href="about.html">Sobre</a></li>
@@ -99,7 +144,7 @@
 			   				<div class="slider-text-inner">
 			   					<h1><strong>Defenda seus direitos com apoio jurídico confiável</strong></h1>
 									<h2>Nossa equipe está pronta para orientar e oferecer suporte jurídico com clareza, responsabilidade e compromisso, ajudando você a tomar decisões seguras.</h2>
-									<p><a class="btn btn-primary btn-lg btn-learn" href="#" target="_blank">Agende uma consulta</a></p>
+									<p><a class="btn btn-primary btn-lg btn-learn" href="https://maps.app.goo.gl/ynpsK2yTBVCTcddL9">Visite o nosso escritório.</a></p>
 			   				</div>
 			   			</div>
 			   		</div>
@@ -113,7 +158,7 @@
 			   				<div class="slider-text-inner">
 			   					<h1><strong>Experiência e dedicação a serviço da justiça</strong></h1>
 									<h2>Trabalhamos com ética, profissionalismo e atenção aos detalhes, buscando sempre as melhores soluções para cada situação apresentada.</h2>
-									<p><a class="btn btn-primary btn-lg btn-learn" href="#" target="_blank">Saiba mais</a></p>
+									<p><a class="btn btn-primary btn-lg btn-learn" href="#indexPage">Saiba mais</a></p>
 			   				</div>
 			   			</div>
 			   		</div>
@@ -127,7 +172,7 @@
 			   				<div class="slider-text-inner">
 			   					<h1><strong>Atendimento próximo e orientação especializada</strong></h1>
 									<h2>Acreditamos que um bom atendimento começa com ouvir. Oferecemos acompanhamento jurídico responsável, com foco na confiança e na transparência.</h2>
-									<p><a class="btn btn-primary btn-lg btn-learn" href="#" target="_blank">Fale conosco</a></p>
+									<p><a class="btn btn-primary btn-lg btn-learn" href="contact.html">Fale conosco</a></p>
 			   				</div>
 			   			</div>
 			   		</div>
@@ -137,7 +182,7 @@
 	  	</div>
 	</aside>
 
-	<div class="site-section">
+	<div class="site-section" id="indexPage">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
@@ -145,9 +190,15 @@
 				</div>
 				<div class="col-md-1"></div>
 				<div class="col-md-5">
-					<h2>Bem-vindo ao Nosso Escritório de Advocacia</h2>
-					<p>Somos um escritório comprometido com a ética, a transparência e a excelência no atendimento. Atuamos oferecendo orientação jurídica clara e responsável, sempre buscando soluções seguras e adequadas para cada cliente. Nosso objetivo é construir relações de confiança e prestar um serviço jurídico de qualidade. </p>
-					<p><a href="#" class="btn btn-primary">Read More</a></p>
+					<h2>Bem-vindo ao nosso escritório de advocacia</h2>
+					<p>Nosso escritório está comprometido em oferecer assistência jurídica com responsabilidade, ética e dedicação. Trabalhamos para orientar nossos clientes com clareza, buscando sempre as melhores soluções e garantindo segurança em cada etapa do processo.
+						<span id="readMore" class="hidden-text" style="display: none;">
+							Trabalhamos para orientar nossos clientes com clareza, buscando sempre as 
+							melhores soluções e garantindo segurança em cada etapa do processo,com atendimento personalizado e atuação estratégica.
+						</span>
+					</p>
+			
+					<button class="btn btn-primary" onclick="lerMais(this)" id="btnReadMore">Ler Mais</button>
 				</div>
 			</div>
 		</div>
@@ -163,7 +214,7 @@
 							<i class="flaticon-courthouse"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Segurança e Confiança</a></h3>
+							<h3><a href="javascript:void(0)">Segurança e Confiança</a></h3>
 							<p>Prezamos pela solidez, pela transparência e pela confiança em cada atendimento. Nosso trabalho é construído com responsabilidade e compromisso com resultados seguros.</p>
 						</div>
 					</div>
@@ -174,7 +225,7 @@
 							<i class="flaticon-padlock"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Proteção de Informações</a></h3>
+							<h3><a href="javascript:void(0)">Proteção de Informações</a></h3>
 							<p>Garantimos sigilo absoluto e cuidado com todas as informações compartilhadas. A privacidade e a segurança dos nossos clientes são prioridades em cada processo.</p>
 						</div>
 					</div>
@@ -185,7 +236,7 @@
 							<i class="flaticon-folder"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Organização e Clareza</a></h3>
+							<h3><a href="javascript:void(0)">Organização e Clareza</a></h3>
 							<p>Atuamos com organização, planejamento e comunicação clara, mantendo nossos clientes sempre informados sobre cada etapa e decisão envolvida.</p>
 						</div>
 					</div>
@@ -234,7 +285,7 @@
 			<div class="ftco-heading">
 				<h2>Experiência que gera confiança</h2>
 				<p>Atuamos com profissionalismo e dedicação, oferecendo soluções jurídicas seguras e eficientes. Nossa equipe está preparada para orientar, defender direitos e buscar os melhores resultados para cada cliente, sempre com ética e transparência.</p>
-				<p><a href="#" class="btn btn-primary">Saiba Mais</a></p>
+				<p><a href="#" class="btn btn-primary">Confira o nosso vídeo</a></p>
 			</div>
 			
 		</div>
@@ -255,7 +306,7 @@
 							<i class="flaticon-courthouse"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Direito Imobiliário</a></h3>
+							<h3><a href="javascript:void(0)">Direito Imobiliário</a></h3>
 							<p>Auxiliamos na compra, venda e regularização de imóveis, garantindo segurança jurídica em cada etapa. Trabalhamos para proteger os direitos de proprietários e compradores.</p>
 						</div>
 					</div>
@@ -266,7 +317,7 @@
 							<i class="flaticon-padlock"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Direito de Seguros</a></h3>
+							<h3><a href="javascript:void(0)">Direito de Seguros</a></h3>
 							<p>Orientamos clientes em casos envolvendo planos e contratos de seguro, buscando soluções justas e claras. Nosso objetivo é assegurar o cumprimento dos direitos do segurado.</p>
 						</div>
 					</div>
@@ -277,7 +328,7 @@
 							<i class="flaticon-folder"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Direito Empresarial</a></h3>
+							<h3><a href="javascript:void(0)">Direito Empresarial</a></h3>
 							<p>Oferecemos suporte jurídico para empresas, desde a abertura até questões contratuais e administrativas. Atuamos para garantir segurança e estabilidade nos negócios.</p>
 						</div>
 					</div>
@@ -288,7 +339,7 @@
 							<i class="flaticon-handcuffs"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Danos Pessoais</a></h3>
+							<h3><a href="javascript:void(0)">Danos Pessoais</a></h3>
 							<p>Prestamos assistência a pessoas que sofreram acidentes ou prejuízos por culpa de terceiros, buscando indenizações justas e proteção dos seus direitos.</p>
 						</div>
 					</div>
@@ -296,10 +347,10 @@
 				<div class="col-md-4 text-center animate-box">
 					<div class="services">
 						<span class="icon">
-							<i class="flaticon-handcuffs"></i>
+							<i class="flaticon-act"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Negligência Médica</a></h3>
+							<h3><a href="javascript:void(0)">Negligência Médica</a></h3>
 							<p>Atuamos em casos de erro médico, analisando cada situação com responsabilidade e cuidado. Nosso compromisso é defender o paciente e garantir justiça.</p>
 						</div>
 					</div>
@@ -310,13 +361,13 @@
 							<i class="flaticon-libra"></i>
 						</span>
 						<div class="desc">
-							<h3><a href="#">Defesa criminal</a></h3>
+							<h3><a href="javascript:void(0)">Defesa criminal</a></h3>
 							<p>Defendemos os direitos dos acusados em processos criminais com ética e seriedade. Trabalhamos para assegurar um julgamento justo e dentro da lei.</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-12 text-center animate-box">
-					<p><a class="btn btn-primary btn-lg btn-learn" href="#">Ver mais <i class="icon-arrow-right"></i></a></p>
+					<p><a class="btn btn-primary btn-lg btn-learn" href="practice.html">Ver mais <i class="icon-arrow-right"></i></a></p>
 				</div>
 			</div>
 		</div>
@@ -329,7 +380,7 @@
 				<div class="col-md-8 col-md-offset-2 text-center ftco-heading ftco-heading2">
 					<h2>Longe da burocracia, perto de você</h2>
 					<p>Atuamos com seriedade e compromisso para oferecer soluções jurídicas claras e eficientes. Nosso objetivo é orientar, proteger direitos e trazer segurança em cada decisão, sempre com atendimento próximo e responsável.</p>
-					<p><a href="#" class="btn btn-primary btn-lg">Agendar consulta</a></p>
+					<p><a href="contact.html" class="btn btn-primary btn-lg">Agendar consulta</a></p>
 				</div>
 			</div>
 		</div>
@@ -394,43 +445,38 @@
 			<div class="ftco-heading">
 				<h2>Conselho legal gratuito</h2>
 			</div>
-			<form action="#">
-				<div class="row form-group">
-					<div class="col-md-6">
-						<label for="fname">Nome</label>
-						<input type="text" id="fname" class="form-control">
-					</div>
-					<div class="col-md-6">
-						<label for="lname">Sobrenome</label>
-						<input type="text" id="lname" class="form-control">
-					</div>
-				</div>
+			<form action="#" id="formContato">
+						<div class="row form-group">
+							<div class="col-md-6">
+								<input type="text" id="fname" class="form-control" placeholder="Seu primeiro nome" required>
+							</div>
+							<div class="col-md-6">
+								<input type="text" id="lname" class="form-control" placeholder="Seu sobrenome" required>
+							</div>
+						</div>
 
-				<div class="row form-group">
-					<div class="col-md-12">
-						<label for="email">Email</label>
-						<input type="text" id="email" class="form-control">
-					</div>
-				</div>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<input type="email" id="email" class="form-control" placeholder="Seu endereço de e-mail" required>
+							</div>
+						</div>
 
-				<div class="row form-group">
-					<div class="col-md-12">
-						<label for="subject">Assunto</label>
-						<input type="text" id="subject" class="form-control">
-					</div>
-				</div>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<input type="text" id="subject" class="form-control" placeholder="O assunto que deseja falar" required>
+							</div>
+						</div>
 
-				<div class="row form-group">
-					<div class="col-md-12">
-						<label for="message">Mesagem</label>
-						<textarea name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
-					</div>
-				</div>
-				<div class="form-group">
-					<input type="submit" value="Enviar" class="btn btn-primary">
-				</div>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Digite aqui a sua mensagem" required></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Enviar mensagem" id="btnEnviar" class="btn btn-primary" onclick="verificarEnvio(this)">
+						</div>
 
-			</form>	
+					</form>	
 		</div>
 	</div>
 
@@ -528,16 +574,16 @@
 		</div>
 	</div>
 
-	<div id="intro-bg" >
+	<div id="intro-bg">
 		<div class="container">
 			<div id="ftco-intro" style="position: relative; margin-bottom: -150px!important;">
 				<div class="third-col">
-					<h2 class="h3">Precisa de serviços legais?</h2>
+					<h2 class="h3">Precisa de servi&ccedil;os legais?</h2>
 					<p>Oferecemos assessoria jurídica especializada, com foco em soluções eficazes e atendimento personalizado para cada cliente.</p>
 				</div>
 				<div class="third-col third-col-color">
-					<h2 class="h3">Ligue agora 3412-2018</h2>
-					<p>Ou mande um e-mail para <a href="#" target="_blank">gabin.cn@ifrn.edu.br</a></p>
+					<h2 class="h3">Ligue agora <a href="tel://08434122018">3412-2018</a></h2>
+					<p>Ou mande um e-mail para <a href="mailto:gabin.cn@ifrn.edu.br">gabin.cn@ifrn.edu.br</a></p>
 					<p>Agende uma consulta e conte com profissionais experientes para defender seus direitos.</p>
 				</div>
 			</div>
@@ -554,20 +600,20 @@
 				<div class="col-md-3 col-md-push-1">
 					<h4>Explorar</h4>
 					<ul class="ftco-footer-links">
-						<li><a href="#">Ínicio</a></li>
-						<li><a href="#">Áreas de atuação</a></li>
-						<li><a href="#">Casos ganhos</a></li>
-						<li><a href="#">Blog</a></li>
-						<li><a href="#">Sobre</a></li>
+						<li><a href="#" class="js-gotop">Ínicio</a></li>
+						<li><a href="practice.html">Áreas de atuação</a></li>
+						<li><a href="won.html">Casos vencidos</a></li>
+						<li><a href="blog.html">Blog</a></li>
+						<li><a href="about.html">Sobre</a></li>
 					</ul>
 				</div>
 
 				<div class="col-md-3 col-md-push-1">
 					<h4>Informações para contato</h4>
 					<ul class="ftco-footer-links">
-						<li>Rua Manoel Lopes Filho, 773<br>Currais Novos - RN, 59380-000</li>
-						<li><a href="tel://1234567920">(84) 3412-2018</a></li>
-						<li><a href="mailto:info@yoursite.com">gabin.cn@ifrn.edu.br</a></li>
+						<li>Rua Manoel Lopes Filho, 773 <br> Currais Novos - RN, 59380-000</li>
+						<li><a href="tel://08434122018">(84) 3412-2018</a></li>
+						<li><a href="mailto:gabin.cn@ifrn.edu.br">gabin.cn@ifrn.edu.br</a></li>
 					</ul>
 				</div>
 
@@ -575,8 +621,8 @@
 					<h4>Horário de funcionamento</h4>
 					<ul class="ftco-footer-links">
 						<li>Seg - Qui: 9:00 - 21 00</li>
-						<li>Sex 8:00 - 21 00</li>
-						<li>Sáb 9:30 - 15: 00</li>
+						<li>Sex: 8:00 - 21:00</li>
+						<li>Sáb: 9:30 - 15:00</li>
 					</ul>
 				</div>
 
@@ -585,16 +631,13 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos os direitos reservados.</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos os direitos reservados.
             </p>
 					<p>
 						<ul class="ftco-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a href="https://www.instagram.com/ifrncn?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="icon-instagram"></i></a></li>
+							<li><a href="https://www.facebook.com/ifrncampuscurraisnovos"><i class="icon-facebook"></i></a></li>
+							<li><a href="https://www.linkedin.com/school/ifrn/"><i class="icon-linkedin"></i></a></li>
 						</ul>
 					</p>
 				</div>
